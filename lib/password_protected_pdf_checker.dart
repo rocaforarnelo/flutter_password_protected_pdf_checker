@@ -1,4 +1,5 @@
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 import 'password_protected_pdf_checker_platform_interface.dart';
@@ -16,7 +17,9 @@ class PasswordProtectedPdfChecker {
       final bool result = await _channel.invokeMethod('checkPasswordProtectedPDF', bytes);
       return result;
     } catch (error) {
-      print('Error inside isPDFPasswordProtected: ${error.toString()}');
+      if (kDebugMode) {
+        print('Error inside isPDFPasswordProtected: ${error.toString()}');
+      }
     }
 
     return false;
