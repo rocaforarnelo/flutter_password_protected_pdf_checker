@@ -6,7 +6,7 @@ This plugin will help to identify this.
 ## Getting Started
 ```
 final passwordProtectedChecker = PasswordProtectedPdfChecker();
+// here you need to get Uint8List from PDF file and pass that into isPDFPasswordProtected()
 final result = await passwordProtectedChecker.isPDFPasswordProtected(bytes);
-//here you need to get Uint8List from PDF file and pass that into isPDFPasswordProtected()
 ```
 
